@@ -1,0 +1,10 @@
+version: 2
+models:
+  - name: customer_table
+    materialized: incremental
+    unique_key: customer_id
+    schema: test
+    incremental_strategy:
+      strategy: merge
+      merge_key: customer_id
+      updated_at: LastUpdateDate
